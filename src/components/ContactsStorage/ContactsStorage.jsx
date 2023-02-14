@@ -3,7 +3,7 @@ import { Contact } from 'components/ContactItem/ContactItem';
 
 export const ContactsStorage = ({ contactList, onDeleteContact }) => {
   return (
-    <ul>
+    <ul style={{ listStyle: 'none' }}>
       {contactList.map(({ id, name, number }) => {
         return (
           <Contact

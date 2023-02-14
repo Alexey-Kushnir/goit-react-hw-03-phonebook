@@ -29,6 +29,9 @@ export class App extends Component {
   }
 
   addContact = ({ name, number }, { resetForm }) => {
+    // console.log(name, number, resetForm);
+    // const contactName = name.toLowerCase();
+
     if (this.state.contacts.some(contact => contact.name === name)) {
       return alert(`${name} is already in contacts.`);
     }
