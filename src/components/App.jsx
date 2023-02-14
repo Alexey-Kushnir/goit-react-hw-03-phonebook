@@ -28,16 +28,15 @@ export class App extends Component {
     }
   }
 
-  addContact = ({ name, number }) => {
+  addContact = ({ name, number }, { resetForm }) => {
     if (this.state.contacts.some(contact => contact.name === name)) {
-      alert(`${name} is already in contacts.`);
-      return false;
+      return alert(`${name} is already in contacts.`);
     }
 
     this.setState(({ contacts }) => ({
       contacts: [{ id: nanoid(8), name, number }, ...contacts],
     }));
-    return true;
+    return resetForm();
   };
 
   deleteContact = contactId => {
